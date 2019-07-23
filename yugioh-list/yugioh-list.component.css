@@ -1,0 +1,10 @@
+.bg { 
+  /* The image used */
+  background:  url("http://sfwallpaper.com/images/yu-gi-oh-backgrounds-8.jpg") no-repeat center center fixed;
+
+ } 
+
+h3 {
+  color: blueviolet;
+  font-family: fantasy;
+}

@@ -1,0 +1,53 @@
+<!-- Navbar  -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" >Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="monster">Monster  </a>
+        <!--<a class="nav-item nav-link" href="company">Company  </a> -->
+      </div>
+    </div>
+  </nav>
+
+<!-- Home  -->
+  <div class="bg">
+    <h1>{{title}}</h1>
+    <h3>Number of monsters {{getNumOfMonsters()}}</h3>
+    <div class="container" *ngIf="!selected">
+      <div class="row">
+        <div class="col-sm">
+          id
+        </div>
+        <div class="col-sm">
+          name
+        </div>
+        <div class="col-sm">
+          image
+        </div>
+      </div>
+      <div class="row" *ngFor="let monster of monsters" (click)="selected = monster">
+        <div class="col-sm">{{monster.name}}</div>
+        <div class="col-sm">{{monster.attribute}}</div>
+        <div class="col-sm"><img src={{monster.monsterImageUrl}}/></div>
+      </div>
+    </div>
+  </div>
+
+<!-- Details -->
+<div *ngIf="selected">
+
+  <h4>{{selected.name}}</h4>
+  <p>Attack Points: {{selected.attackpoints}}</p>
+  <p>Defense Points: {{selected.defensepoints}}</p>
+  <img src ={{selected.monsterImageUrl}}/>
+  <p>Attribute: {{selected.attribute}}</p>
+  <button (click)= "selected = null"> Back </button>
+</div>
+
+ <div>
+<h1 >{{topic}}</h1>
+<input type="text" name="topic" [(ngModel)]="topic" />
+</div>
